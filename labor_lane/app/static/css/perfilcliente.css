@@ -1,0 +1,630 @@
+
+*{/* Esto selecciona y aplica en todos los elementos del documento */
+    padding: 0;/* crea el espacio o área alrededor del contenido de un elemento */
+    margin: 0;/* establece el margen para los cuatro lados */
+    box-sizing: border-box;/* indica cómo se deben calcular las medidas de un elemento */
+    text-decoration: none;/* permite que el texto sea decorado mediante una de cinco propiedades: 
+    underline (subrayado),
+    overline (línea superior), 
+    line-through (tachado), 
+    blink (parpadeo), 
+    o la por defecto none (ninguna) */
+    list-style: none; /* Para no mostrar ningún marcador en una lista de elementos */
+    border: none;    /* borde */
+    outline: none;/* es usada para establecer el estilo del contorno de un elemento */
+    scroll-behavior: smooth; /* especifica el comportamiento del desplazamiento para un elemento con desplazamiento */
+    font-family: 'Work Sans', sans-serif;/* Fuente sacada de google fonts */
+}
+
+/* Se declaran los diseños universales para el documento */
+:root{
+    /* Tamaños de letras */
+    --h1-font: 5rem;
+    --h2-font: 2.9rem;
+    --p-font: 1.1rem;
+    /* Colores */
+    --bg-color: #05144d;
+    --text-color: #ffffff;
+    --main-color: #4a90df;
+    --other--color: #d6d6d6;
+
+}
+
+body{
+    background-color: #0f2479;
+    color: var(--text-color);
+}
+/* header ------------------------------ */
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    padding: 30px 15%;
+    transition: all .80s ease;
+}
+
+
+
+
+.logo img{
+    width: 22%;
+    height: auto;
+    min-width: 100px;
+    position: relative;
+    margin: auto 0px;
+    transition: all .80s ease;
+    left: 50px;
+}
+
+.navbar{
+    display: flex;
+    gap: 20px;
+    margin-left: 30rem;
+    transition: all .80s ease;
+    position: absolute;
+    right: 50px;
+}
+.navbar a{
+    padding: 10px 30px;
+    font-size: var(--p-font);
+    font-weight: 400;
+    color: #f2f3f4;
+    transition: all .40s ease;
+    border-bottom: 2px solid #f2f3f4;
+}
+.navbar a:hover{
+    color: var(--text-color); 
+}
+
+
+.navbar a:hover{
+    color: #abafc7;
+    font-weight: 700;
+    
+}
+.h-boton{
+    display: flex;
+    align-items: center;
+}
+
+.icono-menu{
+    color: var(--text-color);
+    font-size: 36px;
+    margin-left: 5px;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
+}
+
+
+.title{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.img-user{
+    width: 22%;
+    min-width: 50px;
+    height: auto;
+    position: relative;
+    left: 35%;
+}
+
+main{
+    width: 100%;
+    height: auto;
+    margin: 10% 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8%;
+    
+}
+
+.card-user{
+    background-color: var(--main-color);
+    width: 25%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--bg-color);
+    border-radius: .90rem;
+}
+
+
+
+.user-image {
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    padding: 10px;
+}
+
+
+
+.card-user-img{
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    min-width: 150px;
+    cursor: pointer;
+    background-color: var(--other--color);
+    border-radius: 50rem;
+    border: solid 10px var(--bg-color);
+
+}
+
+.box-info{
+    background-color: var(--bg-color);
+    width: 80%;
+    height: 150px;
+    color: var(--text-color);
+    overflow-y: scroll;
+    padding: 5px;
+    border: solid 10px var(--bg-color);
+    border-top-left-radius: .70rem;
+    border-top-right-radius: .70rem;
+}
+.box-info::-webkit-scrollbar{
+    background-color: transparent;
+    width: 1px;
+}
+
+
+.box-info p{
+    padding: 0px 10px ;
+    justify-content: left;
+    text-align: left;
+
+}
+
+.card-work{
+    background-color: var(--bg-color);
+    width: 55%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--bg-color);
+    border-bottom: 25px solid var(--bg-color);
+    gap: 10%;
+    color: var(--text-color);
+    border-radius: .70rem;
+}
+
+.box-title{
+    width: 95%;
+    height: 50px;
+    text-align: center;
+}
+
+.box-backg{
+    background-color: var(--main-color);
+    width: 95%;
+    height: 300px;
+    display: grid;
+    overflow-y: scroll;
+    border-radius: .70rem;
+}
+
+.box-coment{
+    background-color: var(--bg-color);
+    width: 90%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    gap: 1%;
+    overflow-y: scroll;
+    border-radius: .70rem;
+}
+
+.box-coment p{
+    padding: 0px 10px ;
+    justify-content: center;
+    text-align: center;
+}
+.box-coment::-webkit-scrollbar{
+    background-color: transparent;
+    width: 1px;
+}
+
+
+.box-backg-user{
+    width: 15%;
+    height: auto;
+    position: relative;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .70rem;
+
+}
+.box-backg::-webkit-scrollbar{
+    background-color: transparent;
+    width: 1px;
+}
+.img-backg-user{
+    width: 100%;
+    height: auto;
+}
+
+.box-coment-user{
+    width: 70%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-radius: .70rem;
+}
+
+.box-coment-text{
+    width: 100%;
+    height: 75%; 
+}
+
+
+/* Aca comienzan las alertas */
+
+.alert-ask{
+    width: 20%;
+    height: auto;
+    max-width: 25%;
+    min-width: 200px;
+    background-color:  white;
+    position: fixed;
+    top: 25%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99;
+    color: var(--main-color);
+}
+
+
+.alert-ask button{
+    background-color: var(--bg-color);
+    width: 100px;
+    height: 20px;
+    color: var(--main-color);
+}
+
+
+.alert-acep{
+    background-color: var(--bg-color);
+    width: 20%;
+    height: auto;
+    max-width: 25%;
+    min-width: 200px;
+    position: fixed;
+    top: 25%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    z-index: 99;
+    text-align: center;
+}
+/* 
+.box-file{
+    background-color: white;
+    color: var(--main-color);
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+.file{
+    background-color: #000020;
+    width: 100px;
+    height: 20px;
+}
+.box-file input[type="file"]{
+    display: none;
+} */
+
+/* Aca terminan las aletas */
+
+.box-btn{
+    width: 50%;
+    height: auto;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin: 25px;
+}
+
+.btn-alert{
+    width: 70px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('images/pageLoader.gif') 50% 50% no-repeat rgb(0, 0, 0);
+}
+
+/* Realizamos un footer Con tres columnas y con el logo de la imagen y las redes sociales */
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-color);  
+    padding: auto;    
+}
+
+.footer .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+
+.footer .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .grupo-1 .box img{
+    width: 250px;
+}
+
+.footer .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.footer .grupo-1 .box p{
+    color: #d4d5da;
+    margin-bottom: 10px;
+}
+
+.footer .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 50px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #000020;
+    text-align: center;
+    transition: all 300ms ease;
+    border-radius: 15%;
+}
+/* Con esto se ponen el color de fondo cuando pasa el mouse por las redes */
+.footer .grupo-1 .red-social a:hover{
+    width: 60px;
+    height: 55px;
+    line-height: 60px;
+}
+.footer .grupo-1 .red-social .R-1:hover{
+    background-color: #303df3;
+}
+.footer .grupo-1 .red-social .R-2:hover{
+    background-color: #4adf6a;
+}
+.footer .grupo-1 .red-social .R-3:hover{
+    background-color: #5b25a1;
+}
+.footer .grupo-1 .red-social .R-4:hover{
+    background-color: #ec47c9;
+}
+
+/* Editamos la linea inferior de copy  */
+.footer .grupo-2{
+    background-color: #000020;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer .grupo-2 small{
+    font-size: 15px
+}
+
+/* Conesto hacemos que el footer sea responsive */
+
+/* @media screen and (max-widht:800px){
+    .footer .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+} */
+@media (max-width: 1790px){
+    header{
+        padding: 18px 6%;
+    }
+    section{
+        padding: 70px 6% 60px;
+    }
+    header .sticky{
+        padding: 7px 6%;
+    }
+    .feature{
+        padding: 40px 6% 30px;
+    }
+
+}
+@media (max-width: 1425px){
+    :root{
+        --h1-font: 4.5rem;
+        --h2-font: 2.6rem;
+        --p-font: 1rem;
+    }
+    .home-imagen{
+        width: 540px;
+        height: 540px;
+    }
+    .home-imagen img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    header{
+        padding: 15px 5%;
+    }
+    section{
+        padding: 70px 5% 60px;
+    }
+    header .sticky{
+        padding: 7px 5%;
+    }
+    .feature{
+        padding: 40px 5% 30px;
+        margin-top: 200px;
+    }
+}
+
+@media (max-width: 1170px){
+    .icono-menu{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: #101821;
+        padding: 20px 15px;
+        gap: 0.5rem;
+        text-align: left;
+        transition: all .50s ease;
+    }
+    .navbar a{
+        display: block;
+        font-size: 20px;
+        padding: 15px;
+    }
+    .navbar.open{
+        right: 0;
+    }
+    :root{
+        --h1-font: 4rem;
+        --h2-font: 2rem;
+        --p-font: 1rem;
+    }
+    .home-inicio{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        height: 120vh;
+
+    }
+    .home-text{
+        order: 2;
+        width: 100%;
+        max-width: 900px;
+    }
+    .home-imagen{
+        width: 480px;
+        height: 480px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    .nosotros{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 570px){
+    :root{
+        --h1-font: 3.4rem;
+        --h2-font: 2rem;
+        --p-font: 15px;
+    }
+    .home-inicio{
+        gap: 15px;
+        height: 110vh;
+    }
+    .home-imagen{
+        width: 400px;
+        height: 400px;
+        padding-top: 10px;
+    }
+    .footer .grupo-1{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer .grupo-1 .box{
+        text-align: center;
+    }
+    .home-buscar{
+        width: 90%;
+    }
+} 
+
+
+
+
+@media screen and (max-width: 700px) {
+    main{
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 150px;
+    }
+    .logo img{
+        left: 10px;
+    }
+    .card-user{   
+        width: 70%; 
+    }
+
+    .card-work{
+        width: 95%;
+    }
+    .box-coment-text p{
+        font-size: 12px;
+        color: aqua;
+    }
+
+    .box-backg-user{
+        height: 50px;
+        right: 10px;
+    }
+
+    .alert-ask{
+        font-size: 0.5em;
+    }
+    
+}

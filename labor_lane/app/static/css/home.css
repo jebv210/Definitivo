@@ -1,0 +1,622 @@
+*{/* Esto selecciona y aplica en todos los elementos del documento */
+    padding: 0;/* crea el espacio o área alrededor del contenido de un elemento */
+    margin: 0;/* establece el margen para los cuatro lados */
+    box-sizing: border-box;/* indica cómo se deben calcular las medidas de un elemento */
+    text-decoration: none;/* permite que el texto sea decorado mediante una de cinco propiedades: 
+    underline (subrayado),
+    overline (línea superior), 
+    line-through (tachado), 
+    blink (parpadeo), 
+    o la por defecto none (ninguna) */
+    list-style: none; /* Para no mostrar ningún marcador en una lista de elementos */
+    border: none;    /* borde */
+    outline: none;/* es usada para establecer el estilo del contorno de un elemento */
+    scroll-behavior: smooth; /* especifica el comportamiento del desplazamiento para un elemento con desplazamiento */
+    font-family: 'Work Sans', sans-serif;/* Fuente sacada de google fonts */
+    box-sizing: border-box;
+}
+
+/* Se declaran los diseños universales para el documento */
+:root{
+    /* Tamaños de letras */
+    --h1-font: 5rem;
+    --h2-font: 2.9rem;
+    --p-font: 1.1rem;
+    /* Colores */
+    --bg-color: #05144d;
+    --text-color: #ffffff;
+    --main-color: #4a90df;
+    --other--color: #d6d6d6;
+
+}
+
+body{
+    background-color: #0f2479;
+    color: var(--text-color);
+}
+
+/* header ------------------------------ */
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 30px 15%;
+    transition: all .80s ease;
+}
+.logo img{
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    top: 1px;
+    transition: all .80s ease;
+}
+
+.navbar{
+    display: flex;
+    gap: 20px;
+    margin-left: 30rem;
+    transition: all .80s ease;
+    
+}
+.navbar a{
+    padding: 10px 30px;
+    font-size: var(--p-font);
+    font-weight: 700;
+    color: #f2f3f4;
+    transition: all .40s ease;
+    border-bottom: 2px solid #f2f3f4;
+}
+.navbar a:hover{
+    color: var(--text-color); 
+}
+
+
+.navbar a:hover{
+    color: #abafc7;
+    font-weight: 700;
+    
+}
+
+
+
+.h-boton{
+    display: flex;
+    align-items: center;
+}
+
+.h-boton-login{
+    background: transparent;
+    border: 2px solid #f2f3f4;
+    display: inline-block;
+    padding: 14px 45px;
+    border-radius: 10px;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 20px;
+    transition: all .40s ease;
+}
+.h-boton-login:hover{
+
+    background-color: white;
+    color: var(--main-color);
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+.foto-usuario{
+    border: 3px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.foto-usuario img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.icono-menu{
+    color: var(--text-color);
+    font-size: 36px;
+    margin-left: 5px;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
+}
+/* scroll header animation  */
+header.sticky{
+    padding: 10px 15% 15px ;
+    background: var(--bg-color);
+}
+header.sticky .logo img{
+    height: 75px;
+    width: 75px;
+    top: 0px;
+}
+
+/* home---------------------------- */
+/* primera seccion  */
+
+.home-inicio-carrusel{
+    margin-top: 10vh;
+}
+
+.boton-centro-slider{
+    margin: 10px 75px;
+    margin-bottom: -100px;
+}
+
+.home-text-1 {
+    overflow: hidden; /* Clear the float */
+}
+.home-text-2{
+    overflow: hidden;
+}
+
+.home-text-2 .carrusel-1-text{
+    margin: -30px 40px 50px 40px;
+    height: 110%;
+    width: 40%;
+    text-align: right;
+    float: right;
+    box-sizing: border-box;
+}
+
+.carrusel-1-text{
+    margin: -30px 40px 50px 40px;
+    height: 110%;
+    width: 40%;
+    text-align: left;
+    float: left;
+    box-sizing: border-box;
+
+}
+
+.carrusel-1-text h1,
+.carrusel-1-text p{
+    padding: 30px;
+    font-weight: 500;
+    font-size: 25px;
+}
+.carrusel-1-text h1{
+    font-weight: 700;
+    font-size: 40px;
+}
+
+
+.home-text-1 .slider3,
+.home-text-1 .slider1 {
+    float: right;
+    width: 43%;
+    box-sizing: border-box;
+    background: url(../multimedia/home/Fondo.png);
+}
+.home-text-1 .slider3{
+    background: none;
+}
+.home-text-2 .slider2 {
+    float: left;
+    width: 53%;
+    box-sizing: border-box;
+
+}
+
+.boton-slider-2,
+.boton-slider-1{
+    display: inline-block;
+    padding: 18px 28px;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: .70rem;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+.boton-slider-2{
+    margin: 0px 40px 0px 0px;
+}
+
+/* segunda seccion  */
+
+.feature{
+    padding: 60px 15% 50px;
+    background: rgb(15,36,121);
+    background: linear-gradient(180deg, rgba(15,36,121,1) 0%, rgba(5,20,77,1) 100%);
+}
+.centro-derecho h2{
+    font-size: var(--h2-font);  
+}
+.feature-contenido p{
+    font-size: var(--h2-font);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+
+}
+.feature-contenido{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+.feature-img img{
+    width: 75%;
+    height: auto;
+    align-items: center;
+}
+
+/* tercera seccion  */
+
+.servicios{
+    background: rgb(15,36,121);
+    background: linear-gradient(0deg, rgba(15,36,121,1) 0%, rgba(5,20,77,1) 100%);
+}
+
+.servicios-contenido{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4.5rem;
+}
+.servicios-vertical{
+    position: relative;
+    cursor: pointer;
+}
+.servicios-vertical img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+.servicios-vertical h5{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.servicios-vertical p{
+    font-size: var(--p-font);
+    color: var(--other--color);
+    margin-bottom: 20px;
+}
+.lista{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.lista a{
+    color: var(--text-color);
+    font-size: var(--p-font);
+}
+.seguridad i{
+    font-size: 18px;
+    color: var(--main-color);
+}
+.boton-centro{
+    text-align: center;
+    margin-top: 4rem;
+}
+.boton{
+    display: inline-block;
+    padding: 18px 28px;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: .70rem;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+.boton:hover{
+    transform: translateY(-7px) scale(0.9);
+}
+/* cuarte seccion  */
+
+.nosotros{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 4.5rem;
+    background: rgb(15,36,121);
+    background: linear-gradient(180deg, rgba(15,36,121,1) 0%, rgba(5,20,77,1) 100%);
+    
+}
+
+.nosotros-img img{
+    height: auto;
+    width: 100%;
+}
+
+.nosotros-texto h2{
+    font-size: var(--h2-font);
+    margin-bottom: 25px;
+}
+
+.nosotros-texto p{
+    font-size: var(--p-font);
+    color: var(--other--color);
+    line-height: 30px;
+    margin-bottom: 50px;
+
+}
+
+/* quinta seccion  */
+
+.segir{
+    background: rgb(15,36,121);
+    background: linear-gradient(0deg, rgba(15,36,121,1) 0%, rgba(5,20,77,1) 100%);
+}
+
+.segir-contenido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: url(../multimedia/home/fondo-colorido-borroso-vivo.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 6rem 2rem;
+
+}
+
+.segir-contenido h2{
+    font-size: var(--h2-font);
+    margin-bottom: 12px;
+}
+.segir-contenido p{
+    font-size: var(--p-font);
+    line-height: 30px;
+    margin-bottom: 27px;
+}
+
+/* sexta seccion  */
+
+
+
+
+/* Realizamos un footer Con tres columnas y con el logo de la imagen y las redes sociales */
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-color);  
+    padding: auto;    
+}
+
+.footer .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+
+.footer .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .grupo-1 .box img{
+    width: 250px;
+}
+
+.footer .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.footer .grupo-1 .box p{
+    color: #d4d5da;
+    margin-bottom: 10px;
+}
+
+.footer .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 50px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #000020;
+    text-align: center;
+    transition: all 300ms ease;
+    border-radius: 15%;
+}
+/* Con esto se ponen el color de fondo cuando pasa el mouse por las redes */
+.footer .grupo-1 .red-social a:hover{
+    width: 60px;
+    height: 55px;
+    line-height: 60px;
+}
+.footer .grupo-1 .red-social .R-1:hover{
+    background-color: #303df3;
+}
+.footer .grupo-1 .red-social .R-2:hover{
+    background-color: #4adf6a;
+}
+.footer .grupo-1 .red-social .R-3:hover{
+    background-color: #5b25a1;
+}
+.footer .grupo-1 .red-social .R-4:hover{
+    background-color: #ec47c9;
+}
+
+/* Editamos la linea inferior de copy  */
+.footer .grupo-2{
+    background-color: #000020;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer .grupo-2 small{
+    font-size: 15px
+}
+
+/* Conesto hacemos que el footer sea responsive */
+
+/* @media screen and (max-widht:800px){
+    .footer .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+} */
+@media (max-width: 1790px){
+    header{
+        padding: 18px 6%;
+    }
+    section{
+        padding: 70px 6% 60px;
+    }
+    header.sticky{
+        padding: 7px 6%;
+    }
+    .feature{
+        padding: 40px 6% 30px;
+    }
+
+}
+@media (max-width: 1425px){
+    :root{
+        --h1-font: 4.5rem;
+        --h2-font: 2.6rem;
+        --p-font: 1rem;
+    }
+    .home-imagen{
+        width: 540px;
+        height: 540px;
+    }
+    .home-imagen img{
+        width: 90%;
+        height: 100%;
+        object-fit: contain;
+    }
+    header{
+        padding: 15px 5%;
+    }
+    section{
+        padding: 70px 5% 60px;
+    }
+    header.sticky{
+        padding: 7px 5%;
+    }
+    .feature{
+        padding: 40px 5% 30px;
+    }
+}
+
+@media (max-width: 1170px){
+    .icono-menu{
+        display: block;
+    }
+    .foto-usuario{
+        right: 11%;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: #101821;
+        padding: 20px 15px;
+        gap: 0.5rem;
+        text-align: left;
+        transition: all .50s ease;
+    }
+    .navbar a{
+        display: block;
+        font-size: 20px;
+        padding: 15px;
+    }
+    .navbar.open{
+        right: 0;
+    }
+    :root{
+        --h1-font: 4rem;
+        --h2-font: 2rem;
+        --p-font: 1rem;
+    }
+    .home-inicio{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        height: 120vh;
+
+    }
+    .home-text{
+        order: 2;
+        width: 100%;
+        max-width: 900px;
+    }
+    .home-imagen{
+        width: 480px;
+        height: 480px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    .nosotros{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 570px){
+    :root{
+        --h1-font: 3.4rem;
+        --h2-font: 2rem;
+        --p-font: 15px;
+    }
+    .home-inicio{
+        gap: 15px;
+        height: 110vh;
+    }
+    .home-imagen{
+        width: 400px;
+        height: 400px;
+        padding-top: 10px;
+    }
+    .footer .grupo-1{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer .grupo-1 .box{
+        text-align: center;
+    }
+    .home-buscar{
+        width: 90%;
+    }
+    .feature-contenido{
+        flex-wrap: wrap;
+    }
+} 

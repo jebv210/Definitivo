@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiencia</title>
+    <style>
+        /* Estilos del formulario de experiencia */
+body {
+    background-color: #f2f3f4;
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #061d70;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #061d70;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="date"] {
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #061d70;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover {
+    background-color: #004080;
+}
+
+/* Estilos adicionales para mejorar la legibilidad del formulario */
+
+    </style>
+</head>
+<body>
+    <h1>Experiencia</h1>
+    <form action="/Experiencia" method="post">
+        <label for="NombreEmpleador">Nombre Empleador:</label>
+            <input type="text" name="NombreEmpleador" id="NombreEmpleador" required><br>
+        <label for="Cargo">Cargo:</label>
+            <input type="text" name="Cargo" id="Cargo" required><br>
+        <label for="Funciones">Funciones:</label>
+            <input type="text" name="Funciones" id="Funciones" required><br>  
+        <label for="Logros">Logros:</label>
+            <input type="text" name="Logros" id="Logros" required><br>        
+        <label for="FechaInicio">Fecha de Inicio:</label>
+            <input type="date" name="FechaInicio" id="FechaInicio" required><br>
+        <label for="Fechafinal">Fecha de final:</label>
+            <input type="date" name="Fechafinal" id="Fechafinal" required><br>
+        <label for="ID">Su id de usuario:</label>
+            <input type="text" name="ID" id="ID" value="{{ ID }}" readonly><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

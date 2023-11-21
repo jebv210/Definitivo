@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/static/css/multimedia/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labor Lane</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrapper {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        
+        .box-form {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="date"] {
+            width: calc(100% - 22px); /* Ajustar para compensar el relleno */
+        }
+        
+        .boton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .boton:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Puedes añadir más estilos según tus preferencias */
+        
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+<body>
+<div class="wrapper">
+    <h1>Formulario de empleados</h1>
+    {% if usuario %}
+        <h1>{{ usuario['nombre'] }}</h1>
+    {% endif %}
+    <form action="/procesar-datos" method="post">
+        <div class="box-form">
+        <label for="nombres">Nombres:</label>
+        <input type="text" name="nombres" id="nombres" required><br>
+        
+        <label for="p_apellido">Primer Apellido:</label>
+        <input type="text" name="p_apellido" id="p_apellido" required><br>
+        
+        <label for="s_apellido">Segundo Apellido:</label>
+        <input type="text" name="s_apellido" id="s_apellido" required><br>
+
+        <label for="genero">Genero:</label>
+        <select name="genero" required>
+            <option value="masculino" id="masculino">Masculino</option>
+            <option value="femenino" id="femenino">Femenino</option>
+            <option value="otro_genero" id="otro_genero">Otro genero</option>
+        
+        </select><br>
+        
+        <label for="tipo_documento">Tipo de documento:</label>
+        <select name="tipo_documento" required>
+            <option value="Targeta de Identidad" id="CC" selected>Targeta de Identidad</option>
+            <option value="Cedula de Ciudadania" id="CE">Cedula de Ciudadania</option>
+            <option value="Cedula de Extranjeria" id="NIT">Cedula de Extranjeria</option>
+        </select><br>
+
+        <label for="numero_documento">Número de documento:</label>
+        <input type="number" name="numero_documento" id="numero_documento"required><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required><br>
+        
+        <label for="celular_u">Primer Celular:</label>
+        <input type="number" name="celular_u" id="celular_u" required><br>
+
+        <label for="celular_d">Segundo Celular:</label>
+        <input type="number" name="celular_d" id="celular_d" required><br>                
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" id="direccion" required><br>
+
+        <label for="estrato">Estrato Residencia:</label>
+        <select name="estrato" required>
+            <option value="Uno" id="Uno" >Uno</option>
+            <option value="Dos" id="Dos" >Dos</option>
+            <option value="Tres"id="Tres" selected>Tres</option>
+            <option value="Cuatro" id="Cuatro" >Cuatro</option>
+            <option value="Cinco" id="Cinco" >Cinco</option>
+            <option value="Seis" id="Seis">Seis</option>
+            <option value="No_estratificado" id="No_estratificado">No estratificado</option>
+        </select><br>
+        
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" name="correo" id="correo" required><br>
+        
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" name="contraseña" id="contraseña" required><br>
+
+        <label for="estado_civil"> Estado Civil:</label>
+        <select name="estado_civil" required>
+            <option value="indiferente" id="indiferente" selected>indiferente</option>
+            <option value="soltero" id="soltero" >soltero</option>
+            <option value="casado" id="casado" >casado</option>
+            <option value="union_libre" id="union_libre" >union libre</option>
+            <option value="separado" id="separado" >Separado</option>
+            <option value="viudo" id="viudo" >Viudo</option>
+        </select><br>
+
+        <label for="personasacargo">Personas a Cargo:</label>
+        <input type="number" name="personasacargo" id="personasacargo" min ="0" required><br>
+
+        <label for="LibretaMilitar"> Libreta Militar:</label>
+        <select name="LibretaMilitar"  required>
+            <option value="no tiene" id="no_tiene">No tiene</option>
+            <option value="libreta de primera" id="libreta_primera">Libreta de primera</option>
+            <option value="libreta de segunda" id="libreta_segunda">libreta de segunda</option>
+        </select><br>
+
+        <label for="Contenido">Contenido:</label>
+        <textarea type="text" name="Contenido" id="Contenido" required></textarea><br>
+
+
+        <!-- <label for="Barrio"> Barrio:</label>
+        <select name="Barrio" required>       
+            <option value="Usaquen" id="Usaquen">Usaquén</option> 
+            <option value="Chapinero"  id="Chapinero">Chapinero<option> 
+            <option value="Santa_Fe"  id="Santa_Fe">Santa Fe<option> 
+            <option value="San_Cristobal"  id="San_Cristobal">San Cristóbal<option> 
+            <option value="Usme"  id="Usme">Usme<option> 
+            <option value="Tunjuelito"  id="Tunjuelito">Tunjuelito<option> 
+            <option value="Bosa"  id="Bosa">Bosa<option>
+            <option value="Kennedy"  id="Kennedy">Kennedy<option> 
+            <option value="Fontibon"  id="Fontibon">Fontibón<option> 
+            <option value="Engativa"  id="Engativa">Engativá<option> 
+            <option value="Suba"  id="Suba">Suba<option> 
+            <option value="Barrios_Unidos"  id="Barrios_Unidos">Barrios Unidos<option> 
+            <option value="Teusaquillo"  id="Teusaquillo">Teusaquillo<option> 
+            <option value="Los_Martires"  id="Los_Martires">Los Mártires<option> 
+            <option value="Antonio_Nariño"  id="Antonio_Nariño">Antonio Nariño<option>
+            <option value="Puente_Aranda"  id="Puente_Aranda">Puente Aranda<option> 
+            <option value="La_Candelaria"  id="La_Candelaria">La Candelaria<option> 
+            <option value="Rafael_Uribe_Uribe"  id="Rafael_Uribe_Uribe">Rafael Uribe Uribe<option> 
+            <option value="Ciudad_Bolivar"  id="Ciudad_Bolivar">Ciudad Bolívar<option>
+        </select><br> -->
+        <input type="submit" class="boton" value="Enviar">
+    </div>
+    </form>
+    </div>
+
+    <!--link de la paguina de los iconos -->    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

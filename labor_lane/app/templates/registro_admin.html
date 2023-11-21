@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/static/css/multimedia/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labor Lane</title>
+    <link rel="stylesheet" href="../static/css/formulario.css">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- para hacer el efecto de zoom -->
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+<body>
+
+    <!-- header--------------------------- -->
+	<header>
+        <h1>Formulario de Administrador</h1>
+        {{ nombre }}
+        <a href="/datos-login">Regresar</a> 
+    </header>
+
+<div class="wrapper">
+    
+    <form action="/procesar-datos" method="post">
+        <div class="box-form">
+        <label for="nombres">Nombres:</label>
+        <input type="text" name="nombres" id="nombres" required><br>
+        
+        <label for="p_apellido">Primer Apellido:</label>
+        <input type="text" name="p_apellido" id="p_apellido" required><br>
+        
+        <label for="s_apellido">Segundo Apellido:</label>
+        <input type="text" name="s_apellido" id="s_apellido" required><br>
+
+        <label for="genero">Genero:</label>
+        <select name="genero" required>
+            <option value="masculino" id="masculino">Masculino</option>
+            <option value="femenino" id="femenino">Femenino</option>
+            <option value="otro_genero" id="otro_genero">Otro genero</option>
+        
+        </select><br>
+        
+        <label for="tipo_documento">Tipo de documento:</label>
+        <select name="tipo_documento" required>
+            <option value="CC" id="CC" selected>CC</option>
+            <option value="CE" id="CE">CE</option>
+            <option value="NIT" id="NIT">NIT</option>
+        </select><br>
+
+        <label for="numero_documento">Número de documento:</label>
+        <input type="number" name="numero_documento" id="numero_documento" min="1000000000" max="1999999999" required><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required><br>
+        
+        <label for="celular_u">Primer Celular:</label>
+        <input type="number" name="celular_u" id="celular_u" min="3000000000" max="3999999999" required><br>
+
+        <label for="celular_d">Segundo Celular:</label>
+        <input type="number" name="celular_d" id="celular_d" min="3000000000" max="3999999999" required><br>                
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" id="direccion" required><br>
+
+        <label for="estrato">Estrato Residencia:</label>
+        <select name="estrato" required>
+            <option value="Uno" id="Uno" >Uno</option>
+            <option value="Dos" id="Dos" >Dos</option>
+            <option value="Tres"id="Tres" selected>Tres</option>
+            <option value="Cuatro" id="Cuatro" >Cuatro</option>
+            <option value="Cinco" id="Cinco" >Cinco</option>
+            <option value="Seis" id="Seis">Seis</option>
+            <option value="No_estratificado" id="No_estratificado">No estratificado</option>
+        </select><br>
+        
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" name="correo" id="correo" required><br>
+        
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" name="contraseña" id="contraseña" required><br>
+
+        <label for="estado_civil"> Estado Civil:</label>
+        <select name="estado_civil" required>
+            <option value="indiferente" id="indiferente" selected>indiferente</option>
+            <option value="soltero" id="soltero" >soltero</option>
+            <option value="casado" id="casado" >casado</option>
+            <option value="union_libre" id="union_libre" >union libre</option>
+            <option value="separado" id="separado" >Separado</option>
+            <option value="viudo" id="viudo" >Viudo</option>
+        </select><br>
+
+        <label for="personasacargo">Personas a Cargo:</label>
+        <input type="number" name="personasacargo" id="personasacargo" min ="0" required><br>
+
+        <label for="LibretaMilitar"> Libreta Militar:</label>
+        <select name="LibretaMilitar"  required>
+            <option value="no_tiene" id="no_tiene">No tiene</option>
+            <option value="libreta_primera" id="libreta_primera">Libreta de primera</option>
+            <option value="libreta_segunda" id="libreta_segunda">libreta de segunda</option>
+        </select><br>
+
+        <label for="Contenido">Contenido:</label>
+        <textarea type="text" name="Contenido" id="Contenido" required></textarea><br>
+
+        <label for="rol"> Que Rol tienes:</label>
+        <select name="rol" required>
+            <option value="3" id="3" readonly>Administrador</option>
+        </select><br>
+
+        <label for="Barrio"> Barrio:</label>
+        <select name="Barrio" required>       
+            <option value="Usaquen" id="Usaquen">Usaquén</option> 
+            <option value="Chapinero"  id="Chapinero">Chapinero<option> 
+            <option value="Santa_Fe"  id="Santa_Fe">Santa Fe<option> 
+            <option value="San_Cristobal"  id="San_Cristobal">San Cristóbal<option> 
+            <option value="Usme"  id="Usme">Usme<option> 
+            <option value="Tunjuelito"  id="Tunjuelito">Tunjuelito<option> 
+            <option value="Bosa"  id="Bosa">Bosa<option>
+            <option value="Kennedy"  id="Kennedy">Kennedy<option> 
+            <option value="Fontibon"  id="Fontibon">Fontibón<option> 
+            <option value="Engativa"  id="Engativa">Engativá<option> 
+            <option value="Suba"  id="Suba">Suba<option> 
+            <option value="Barrios_Unidos"  id="Barrios_Unidos">Barrios Unidos<option> 
+            <option value="Teusaquillo"  id="Teusaquillo">Teusaquillo<option> 
+            <option value="Los_Martires"  id="Los_Martires">Los Mártires<option> 
+            <option value="Antonio_Nariño"  id="Antonio_Nariño">Antonio Nariño<option>
+            <option value="Puente_Aranda"  id="Puente_Aranda">Puente Aranda<option> 
+            <option value="La_Candelaria"  id="La_Candelaria">La Candelaria<option> 
+            <option value="Rafael_Uribe_Uribe"  id="Rafael_Uribe_Uribe">Rafael Uribe Uribe<option> 
+            <option value="Ciudad_Bolivar"  id="Ciudad_Bolivar">Ciudad Bolívar<option>
+        </select><br>
+        <input type="submit" class="boton" value="Enviar">
+    </div>
+    </form>
+    </div>
+    <footer class="footer" id="footer">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#" >
+                        <img src="../static/css/multimedia/logo.png" alt="">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Sobre Nosotros</h2>
+                <p>Somos un Emprendimiento Apoyado del sena y con la busqueda de mejorar el pais.</p>
+                <p>Estamos en El inicio del cambio para poder dar trabajos.</p>
+            </div>
+            <div class="box">
+                <h2>Siguenos</h2>
+                <div class="red-social">
+                    <a href="https://www.youtube.com/" link="" class="R-1"><ion-icon name="logo-facebook" role="img" class="md hydrated"></ion-icon></a>
+                    <a href="" class="R-2"><ion-icon name="logo-whatsapp"></ion-icon>   </a>
+                    <a href="" class="R-3"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="" class="R-4"><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2023 <b>Labor lane</b>- Todos los Derechos Reservados</small>
+        </div>
+    </footer>
+    <!--link de la paguina de los iconos -->    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

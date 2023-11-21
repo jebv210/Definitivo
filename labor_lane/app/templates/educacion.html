@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Educacion</title>
+    <style>
+        /* Estilos del formulario de educación */
+body {
+    background-color: #f2f3f4;
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #061d70;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #061d70;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="date"] {
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #061d70;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover {
+    background-color: #004080;
+}
+
+/* Estilos adicionales para mejorar la legibilidad del formulario */
+
+    </style>
+</head>
+<body>
+    <h1>Educacion</h1>
+    <form action="/Educacion" method="post">
+        <label for="NombreInstitucion">Nombre de la Institucion:</label>
+            <input type="text" name="NombreInstitucion" id="NombreInstitucion" required><br>
+        <label for="TituloEducacion">Titulo de Educacion:</label>
+            <input type="text" name="TituloEducacion" id="TituloEducacion" required><br>
+        <label for="NivelAcademico">Nivel Academico:</label>
+            <input type="text" name="NivelAcademico" id="NivelAcademico" required><br>        
+        <label for="FechaInicio">Fecha de Inicio de educacion:</label>
+            <input type="date" name="FechaInicio" id="FechaInicio" required><br>
+        <label for="Fechafinal">Fecha de final de educacion:</label>
+            <input type="date" name="Fechafinal" id="Fechafinal" required><br>
+        <label for="ID">Su id de usuario:</label>
+            <input type="text" name="ID" id="ID" value="{{ usuario_id }}" readonly><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

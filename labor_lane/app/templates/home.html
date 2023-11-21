@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/static/multimedia/home/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labor Lane</title>
+    <link rel="stylesheet"  type="text/css"  href="../static/css/home.css">
+    <!-- Google Fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+
+    
+
+    <!-- para hacer el efecto de zoom -->
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Agrega la referencia al archivo CSS de Slick Carousel y al archivo JavaScript en la sección <head> de tu HTML: -->
+
+</head>
+<body>
+    <!-- header--------------------------- -->
+	<header>
+        <a href="/#home" class="logo">
+            <img src="../static/multimedia/home/logo.png" alt="">
+        </a>
+        {%if sesion %}
+        <ul class="navbar">
+            <li><a href="/#nosotros">Nosotros</a></li>
+            <li><a href="/#perfiles">Servicios</a></li>
+            <li><a href="/#footer">Contactanos</a></li>
+            <li><a href="{{ url_for('logout.logout') }}">Cerrar Sesión</a></li>
+        </ul>
+            {% if rol == 3 %}
+                <a class="foto-usuario" href="{{ url_for('perfilcliente.perfilcliente') }}"><img src="{{ url_imagen }}" alt=""></a>
+            {% endif %}
+            
+            <div class="icono-menu"><ion-icon name="reorder-four-outline"></ion-icon></div>
+        {%else%}
+        <ul class="navbar">
+            <li><a href="/#nosotros">Nosotros</a></li>
+            <li><a href="/#perfiles">Servicios</a></li>
+            <li><a href="/#footer">Contactanos</a></li>
+            <li><a href="{{ url_for('formulario.formulario') }}">Trabajo</a></li>
+        </ul>
+        <div class="h-boton">
+            <a href="{{ url_for('login.login') }}" class="h-boton-login">Acceder</a>
+            <div class="icono-menu"><ion-icon name="reorder-four-outline"></ion-icon></div>
+        </div>
+        {% endif %}
+    </header>
+<!-- home------------------------------------------>
+<section class="home-inicio-carrusel" id="home">
+
+    <div class="carrusel">
+
+            <div class="home-text-1" >
+                <div class="carrusel-1-text">
+                    <h1>¡Bienvenido <br> a Labor Lane!</h1>
+                    <p>
+                        En Labor Lane, creemos que tu carrera es más que solo un trabajo
+                        es una travesía hacia el éxito ven y descubre las diferentes labores
+                        que ofrecemos para ti.
+                        <div class="boton-centro-slider">
+                            <a href="{{ url_for('catalogo.catalogo') }}" class="boton-slider-1" > Ver Catalogo de Perfiles</a>
+                        </div>
+                    </p>
+                    
+                </div>
+                
+                    <img src="../static/multimedia/home/hombre.svg" alt="Imagen Hombre" class="slider1">
+            </div>
+            <div class="home-text-2" >
+
+                <img src="../static/multimedia/home/slider-2.svg" alt="Imagen Hombre" class="slider2">
+
+                <div class="carrusel-1-text">
+                    
+                    <h1>Crea Y Explora creando tu perfil</h1>
+                    <p>
+                        En Labor Lane puedes crear tu perfil y poder mostrar tus cualidades a todos y ofecer tus servisios.
+                        <div class="boton-centro-slider">
+                            <a href="{{ url_for('catalogo.catalogo') }}" class="boton-slider-2">Registrarse</a>
+                        </div>
+                    </p>
+                    
+                </div>
+                
+            </div>
+            <div class="home-text-1" >
+                <div class="carrusel-1-text">
+                    <h1>Filtra por tu nesecidad</h1>
+                    <p>
+                        En Labor Lane, Puedes filtrar y seleccionar dependiendo de labor que ocupes y asi optimizar tiempo para tu disposicion.
+                        <div class="boton-centro-slider">
+                            <a href="{{ url_for('catalogo.catalogo') }}" class="boton-slider-1" > Ver Catalogo de Perfiles</a>
+                        </div>
+                    </p>
+                    
+                </div>
+                
+                    <img src="../static/multimedia/home/slider-3.svg" alt="Imagen Hombre" class="slider3">
+            </div>
+        
+        </div>
+
+</section>
+
+    <!-- segunda seccion redes-->
+    <section class="feature"  id="feature">
+        <div class="centro-derecho">
+            <h2>Conoce las diferentes cualidades de Labor Lane</h2>
+        </div>
+
+        <div class="feature-contenido" >
+            <div class="feature-img">
+                <img src="../static/multimedia/home/undraw_female_avatar_efig.svg" alt="">
+                <p>Confianza</p>
+            </div>
+            <div class="feature-img">
+                <img src="../static/multimedia/home/undraw_security_on_re_e491.svg" alt="">
+                <p>Seguridad</p>
+            </div>
+            <div class="feature-img">
+                <img src="../static/multimedia/home/undraw_reading_time_re_phf7.svg" alt="">
+                <p>Comodidad</p>
+            </div>
+            <div class="feature-img">
+                <img src="../static/multimedia/home/undraw_sign_up_n6im.svg" alt="">
+                <p>Facil Registro</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tercera Seccion  servicios-->
+
+    <section class="servicios"  id="perfiles">
+        <div class="centro-derecho">
+            <h2>Perfiles</h2>
+        </div>
+
+        <div class="servicios-contenido" >
+            <div class="servicios-vertical">
+                <img src="../static/multimedia/home/undraw_female_avatar_efig.svg">
+                <h5>Samanta Cock</h5>
+                <p>Aseradora de hogar, Profesora Privada</p>
+                <div class="lista">
+                    <a href="#" class="seguridad">
+                        <ion-icon name="home-outline"></ion-icon>
+                        Amabilidad
+                    </a>
+                    <a href="#" class="seguridad">
+                        <ion-icon name="accessibility"></ion-icon>
+                        Servicios
+                    </a>
+                    <a href="#" class="seguridad">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon> 
+                    </a>
+                </div>
+            </div>
+            <div class="servicios-vertical">
+                <img src="../static/multimedia/home/undraw_male_avatar_g98d.svg">
+                <h5>Samuel Moltolla</h5>
+                <p>Jardinero con renombre local</p>
+                <div class="lista">
+                    <a href="#" class="seguridad">
+                        <ion-icon name="location"></ion-icon>
+                        Virrey
+                    </a>
+                    <a href="#" class="seguridad">
+                        <ion-icon name="happy"></ion-icon>
+                        Carismatico
+                    </a>
+                    <a href="#" class="seguridad">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="servicios-vertical">
+                <img src="../static/multimedia/home/undraw_pic_profile_re_7g2h.svg">
+                <h5>Juan Pablo</h5>
+                <p>Albañil y experimentado con años en el oficio</p>
+                <div class="lista">
+                    <a href="#" class="seguridad">
+                        <ion-icon name="construct"></ion-icon>
+                        Arreglos
+                    </a>
+                    <a href="#" class="seguridad">
+                        <ion-icon name="hammer"></ion-icon>
+                        Remodelaciones
+                    </a>
+                    <a href="#" class="seguridad">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-half"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="boton-centro">
+            <a href="{{ url_for('catalogo.catalogo') }}" class="boton" > Ver Catalogo de Perfiles</a>
+        </div>
+    </section>
+
+    <!-- Cuarta seccion  nosotros-->
+
+    <section class="nosotros" id="nosotros" >
+        <div class="nosotros-img" >
+            <img src="../static/multimedia/home/undraw_push_notifications_re_t84m.svg" alt="" >
+        </div>
+
+        <div class="nosotros-texto" >
+            <h2>Explora en la amplia gama de  perfiles</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Corrupti deserunt ratione, pariatur, rerum culpa labore 
+                quod commodi explicabo suscipit, illum impedit fuga assumenda 
+                aut cumque dolor eaque temporibus! Enim molestiae provident neque 
+                deserunt voluptatum nam commodi nihil aspernatur quo vero.</p>
+                <a href="#" class="boton">Ver Perfiles</a>
+        </div>
+
+    </section>
+    <!-- quinta seccion catalogo -->
+    <section class="segir"  >
+        <div class="segir-contenido"  >
+            <h2>La verdadera magia de labor lane </h2>
+            <p>Lo mejor de todo estos servicios es que tu tambien puedes ser parte 
+                y puedes sumarte al catalogo y aportar tus servicios u oficios de una forma 
+                te haces llamar y con nosotros lograrar poder ejercer ese ofici que otro nesecita.
+            </p>
+                <a href="#" class="boton">Registrarse</a>
+        </div>
+    <!-- sexta seccion contactanos -->
+    </section>
+
+
+    <footer class="footer" id="footer">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#" >
+                        <img src="../static/multimedia/home/logo.png" alt="">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Sobre Nosotros</h2>
+                <p>Somos un Emprendimiento Apoyado del sena y con la busqueda de mejorar el pais.</p>
+                <p>Estamos en El inicio del cambio para poder dar trabajos.</p>
+            </div>
+            <div class="box">
+                <h2>Siguenos</h2>
+                <div class="red-social">
+                    <a href="https://www.youtube.com/" link="" class="R-1"><ion-icon name="logo-facebook" role="img" class="md hydrated"></ion-icon></a>
+                    <a href="" class="R-2"><ion-icon name="logo-whatsapp"></ion-icon>   </a>
+                    <a href="" class="R-3"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="" class="R-4"><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2023 <b>Labor lane</b>- Todos los Derechos Reservados</small>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        offset: 300,
+        duration: 1200
+    }); 
+    </script>
+
+
+    <!--link de la paguina de los iconos -->    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../static/js/home.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        // Configuración del carrusel
+        $('.carrusel').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 100,
+            arrows: false,
+            dots: true
+        });
+    });
+</script>
+
+    
+    
+    
+</body>
+</html>
